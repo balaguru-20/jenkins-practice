@@ -5,7 +5,9 @@ pipeline{
         COMPONENT = 'BACKEND'
     }
     options{
-        disableConcurrentBuilds()
+        disableConcurrentBuilds()  //Builds will not applt at a time
+        //timeout(time: 5, unit: 'SECONDS') //timeout after some metioned time
+        timeout(time: 30, unit: 'MINUTES') // generally 30 min or based on project
     }
     stages{
         stage('build'){
