@@ -1,8 +1,11 @@
 pipeline{
     agent { label 'AGENT-1' } //jenkins node name
     environment{
-        PROJECT = 'EXPENSE'
+        PROJECT = 'EXPENSE'     //We can use these as global variables
         COMPONENT = 'BACKEND'
+    }
+    options{
+        disableConcurrentBuilds()
     }
     stages{
         stage('build'){
@@ -11,6 +14,7 @@ pipeline{
                     sh """
                         echo "Hello, this is build"
                         echo "Project: $PROJECT"
+                        sleep 15
                     """
                 }
             }
