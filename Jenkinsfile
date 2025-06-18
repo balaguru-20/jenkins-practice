@@ -97,6 +97,7 @@ pipeline{
     post{
         always{
             echo 'I will always say Hello again!'
+            deleteDir() //it will deletes the directory
         }
         failure{
             echo 'I will run when pipeline is failed'
