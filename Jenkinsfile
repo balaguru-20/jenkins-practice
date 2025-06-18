@@ -2,7 +2,7 @@ pipeline{
     agent { label 'AGENT-1' } //jenkins node name
     environment{
         PROJECT = 'EXPENSE'     //We can use these as global variables
-        COMPONENT = 'BACKEND'
+        COMPONENT = 'BACKEND' 
     }
     options{
         disableConcurrentBuilds()  //Builds will not applt at a time
