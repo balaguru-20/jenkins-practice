@@ -64,6 +64,32 @@ pipeline{
                 """
             }
         }
+        stage('Parallel Stages'){
+            Parallel{
+                stage('STAGE-1'){
+
+                    steps{
+                        script{
+                            sh """
+                                echo "Hello, this is STAGE-1"
+                                sleep 15
+                            """
+                        }
+                    }
+                }
+                stage('STAGE-2'){
+
+                    steps{
+                        script{
+                            sh """
+                                echo "Hello, this is STAGE-2"
+                                sleep 15
+                            """
+                        }
+                    }
+                }
+            }
+        }
     }
     post{
         always{
