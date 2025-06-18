@@ -14,7 +14,7 @@ pipeline{
             steps{
                 script{
                     sh """
-                        echo "Hello, this is build"
+                        echo "Hello, this is test"
                     """
                 }
             }
