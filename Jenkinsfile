@@ -59,13 +59,14 @@ pipeline{
                 environment name: 'DEPLOY_TO', value: 'production'
             }
             steps{
-                sh """
-                    echo "Hello, this is deploy"
-                """
+                script{
+                    sh """
+                        echo "Hello, this is deploy"
+                    """
+                }
             }
-        }   
-    }
-     stage('Parallel Stages'){
+        } 
+        stage('Parallel Stages'){
             Parallel{
                 stage('STAGE-1'){
 
@@ -90,7 +91,9 @@ pipeline{
                     }
                 }
             }
-        }
+        }  
+    }
+     
     post{
         always{
             echo 'I will always say Hello again!'
