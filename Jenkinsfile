@@ -3,7 +3,7 @@ pipeline{
     environment{
         PROJECT = 'EXPENSE'     //We can use these as global variables
         COMPONENT = 'BACKEND' 
-        DEPLOY_TO = "QA"
+        DEPLOY_TO = "production"
     }
     options{
         disableConcurrentBuilds()  //Builds will not applt at a time
