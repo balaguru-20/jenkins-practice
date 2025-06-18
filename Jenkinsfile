@@ -1,11 +1,16 @@
 pipeline{
-    agent { label 'AGENT-1' }
+    agent { label 'AGENT-1' } //jenkins node name
+    environment{
+        PROJECT = 'EXPENSE'
+        COMPONENT = 'BACKEND'
+    }
     stages{
         stage('build'){
             steps{
                 script{
                     sh """
                         echo "Hello, this is build"
+                        echo "Project: $PROJECT"
                     """
                 }
             }
